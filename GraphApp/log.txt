@@ -1,0 +1,106 @@
+2024-05-25 08:46:15	INFO	Palindrome words found: 5
+2024-05-25 08:50:13	INFO	numVertices: 5
+2024-05-25 08:57:25	INFO	numVertices: 5
+2024-05-25 21:43:44	INFO	numVertices: 5
+2024-05-25 22:27:52	INFO	Succsefuly assign layers
+2024-05-25 22:27:52	INFO	numVertices: 5
+2024-05-25 22:30:47	INFO	Succsefuly assign layers
+2024-05-25 22:30:47	INFO	numVertices: 5
+2024-05-25 22:32:09	INFO	Succsefuly assign layers
+2024-05-25 22:32:09	INFO	numVertices: 5
+2024-05-30 12:28:04	INFO	Succsefuly assign layers
+2024-05-30 12:28:04	INFO	numVertices: 5
+2024-05-30 12:45:12	INFO	Succsefuly assign layers
+2024-05-30 12:45:12	INFO	numVertices: 5
+2024-05-30 17:25:31	INFO	Succsefuly assign layers
+2024-05-30 17:25:31	INFO	numVertices: 5
+2024-05-30 17:49:47	INFO	Succsefuly assign layers
+2024-05-30 17:49:47	INFO	numVertices: 5
+2024-05-30 17:57:23	INFO	Succsefuly assign layers
+2024-05-30 17:57:23	INFO	numVertices: 10
+2024-05-30 18:00:07	INFO	Succsefuly assign layers
+2024-05-30 18:00:07	INFO	numVertices: 10
+2024-05-30 18:18:04	INFO	Succsefuly assign layers
+2024-05-30 18:18:04	INFO	numVertices: 10
+2024-05-30 18:27:01	INFO	Succsefuly assign layers
+2024-05-30 18:27:01	INFO	numVertices: 10
+2024-05-30 18:35:21	INFO	Succsefuly assign layers
+2024-05-30 18:35:21	INFO	numVertices: 5
+2024-05-30 18:42:14	INFO	Succsefuly assign layers
+2024-05-30 18:42:14	INFO	numVertices: 5
+2024-05-30 19:13:30	INFO	Succsefuly assign layers
+2024-05-30 19:13:30	INFO	numVertices: 5
+2024-05-30 19:16:32	INFO	Succsefuly assign layers
+2024-05-30 19:16:32	INFO	numVertices: 5
+2024-05-30 19:18:54	INFO	Succsefuly assign layers
+2024-05-30 19:18:54	INFO	numVertices: 5
+2024-05-30 19:20:37	INFO	Succsefuly assign layers
+2024-05-30 19:20:37	INFO	numVertices: 5
+2024-05-30 19:35:01	INFO	Succsefuly assign layers
+2024-05-30 19:35:01	INFO	numVertices: 5
+2024-05-30 19:36:36	INFO	Succsefuly assign layers
+2024-05-30 19:36:36	INFO	numVertices: 5
+2024-05-30 19:40:27	INFO	Succsefuly assign layers
+2024-05-30 19:40:27	INFO	numVertices: 5
+2024-05-30 19:53:23	INFO	Succsefuly assign layers
+2024-05-30 19:53:23	INFO	numVertices: 5
+2024-05-30 20:00:07	INFO	Succsefuly assign layers
+2024-05-30 20:00:07	INFO	numVertices: 5
+2024-05-30 20:13:23	INFO	Succsefuly assign layers
+2024-05-30 20:13:23	INFO	numVertices: 5
+2024-05-30 20:13:29	INFO	Succsefuly assign layers
+2024-05-30 20:13:29	INFO	numVertices: 1
+2024-05-30 20:14:16	INFO	Succsefuly assign layers
+2024-05-30 20:14:16	INFO	numVertices: 10
+2024-05-30 20:35:24	INFO	Succsefuly assign layers
+2024-05-30 20:35:24	INFO	numVertices: 5
+2024-05-30 20:37:31	INFO	Succsefuly assign layers
+2024-05-30 20:37:31	INFO	numVertices: 10
+2024-05-30 20:38:18	INFO	Succsefuly assign layers
+2024-05-30 20:38:18	INFO	numVertices: 5
+2024-05-30 20:39:15	INFO	Succsefuly assign layers
+2024-05-30 20:39:15	INFO	numVertices: 5
+2024-05-30 20:40:44	INFO	Succsefuly assign layers
+2024-05-30 20:40:44	INFO	numVertices: 10
+2024-05-30 20:49:53	INFO	Succsefuly assign layers
+2024-05-30 20:49:53	INFO	numVertices: 5
+2024-05-30 20:51:30	INFO	Succsefuly assign layers
+2024-05-30 20:51:30	INFO	numVertices: 5
+2024-05-30 20:55:31	INFO	Succsefuly assign layers
+2024-05-30 20:55:31	INFO	numVertices: 5
+2024-05-30 21:03:08	INFO	Succsefuly assign layers
+2024-05-30 21:03:08	INFO	numVertices: 3
+2024-05-30 21:04:56	INFO	Succsefuly assign layers
+2024-05-30 21:04:56	INFO	numVertices: 3
+2024-05-30 21:06:53	INFO	Succsefuly assign layers
+2024-05-30 21:06:53	INFO	numVertices: 3
+2024-05-30 21:16:51	INFO	Succsefuly assign layers
+2024-05-30 21:16:51	INFO	numVertices: 3
+2024-05-30 21:19:31	INFO	Succsefuly assign layers
+2024-05-30 21:19:31	INFO	numVertices: 3
+2024-05-30 21:28:46	INFO	Succsefuly assign layers
+2024-05-30 21:28:46	INFO	numVertices: 3
+2024-05-30 21:30:28	INFO	Succsefuly assign layers
+2024-05-30 21:30:28	INFO	numVertices: 3
+2024-05-30 21:32:05	INFO	Succsefuly assign layers
+2024-05-30 21:32:05	INFO	numVertices: 3
+2024-05-30 21:32:25	INFO	Succsefuly assign layers
+2024-05-30 21:32:25	INFO	numVertices: 5
+2024-05-30 21:32:59	INFO	Succsefuly assign layers
+2024-05-30 21:32:59	INFO	numVertices: 10
+2024-05-30 21:33:52	INFO	Succsefuly assign layers
+2024-05-30 21:33:52	INFO	numVertices: 10
+2024-05-30 21:39:03	INFO	Succsefuly assign layers
+2024-05-30 21:39:03	INFO	numVertices: 10
+2024-05-30 21:44:48	INFO	Succsefuly assign layers
+2024-05-30 21:44:48	INFO	numVertices: 10
+2024-05-30 21:45:50	INFO	Succsefuly assign layers
+2024-05-30 21:45:50	INFO	numVertices: 10
+2024-05-30 21:46:38	INFO	Succsefuly assign layers
+2024-05-30 21:46:38	INFO	numVertices: 10
+2024-05-30 21:47:00	INFO	Succsefuly assign layers
+2024-05-30 21:47:00	INFO	numVertices: 3
+2024-05-30 21:47:28	INFO	Succsefuly assign layers
+2024-05-30 21:47:28	INFO	numVertices: 10
+2024-06-06 17:49:52	INFO	Succsefuly assign layers
+2024-06-06 17:49:52	INFO	numVertices: 5
