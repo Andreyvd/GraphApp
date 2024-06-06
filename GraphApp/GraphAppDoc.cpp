@@ -48,8 +48,6 @@ BOOL CGraphAppDoc::OnNewDocument()
 
 void CGraphAppDoc::OnAssignLayersClick()
 {
-	int startVertex;
-
 	if (_text.GetLength() > 0)
 	{
 		try
@@ -108,7 +106,7 @@ void CGraphAppDoc::Serialize(CArchive& ar)
 	}
 }
 
-const CString& CGraphAppDoc::GetText() 
+CString& CGraphAppDoc::GetText() 
 {
 	return _text;
 }
@@ -184,7 +182,7 @@ void CGraphAppDoc::SetText(CString t)
 	_text = t;
 }
 
-void DFS(std::vector<std::vector<int>>& graph, int v, std::vector<int>& component, std::vector<bool>& visited) {
+void CGraphAppDoc::DFS(std::map<CString, std::vector<CString>>& graph, CString v, std::vector<CString>& component, std::map<CString,bool>& visited) {
 	visited[v] = true;
 	component.push_back(v);
 	for (const auto& neighbor : graph[v]) {
@@ -218,97 +216,86 @@ std::vector<CString> CGraphAppDoc::graph()
 		token = _text.Tokenize(delimiter, position);
 	}
 
-	std::vector<std::vector<int>> graph;
-	std::vector<bool> visited;
-	std::map<CString, int> vertexMap;
+	std::map<CString, std::vector<CString>> graph;
+	std::map<CString, bool> visited;
+	std::vector<CString> vertexMap;
 	int numVertices = _ttoi(result[0][0]);
 	_logText.Format("numVertices: %d", numVertices);
 	logInfo(_logText, "INFO");
-	graph.resize(numVertices);
-	visited.resize(numVertices, false);
 	int count = 0;
+	std::map<CString, int> result_map;
 
-	for (int i = 1; i < result.size(); i++)
-	{
-		
-		CString vertexName = result[i][0];
-		if (vertexMap.find(vertexName) == vertexMap.end()) {
-			vertexMap[vertexName] = count;
-		}
-		for (int j = 1; j < result[i].size(); j++)
-        {
-            CString neighborName = result[i][j];
-            if (vertexMap.find(neighborName) == vertexMap.end()) {
-                vertexMap[neighborName] = vertexMap.size();
-				count++;
-                
-            }
-            graph[vertexMap[vertexName]].push_back(vertexMap[neighborName]);
-        }
-		count = vertexMap.size() ;
+	if (numVertices < result.size() - 1) {
+		MessageBox(NULL, _T("you entered more vertex nodes than specified"), _T("Message"), MB_OK);
 	}
-
-	std::vector<std::vector<int>> components;
-	for (int i = 0; i < numVertices; i++)
-	{
-		if (!visited[i]) {
-			std::vector<int> component;
-			DFS(graph, i, component, visited);
-			components.push_back(component);	
-		}
-
-	}
-	std::vector<CString> gcomponent;
-	for (int i = 0; i < components.size(); i++) {
-		CString component_str;
-		std::vector<int> component = components[i];
-		component_str.Format(_T("%d"), component.size());
-			component_str += _T("\n");
-		for (int j = 0; j < component.size() ; j++) {
-			std::vector<CString> component_ = result[component[j] + 1];		
-			for (const auto& elem : component_) {
-				component_str += elem;
-				component_str += " ";	
+	else {
+		for (int i = 1; i < result.size(); i++)
+		{
+			CString vertexName = result[i][0];
+			result_map[vertexName] = i;
+			vertexMap.push_back(vertexName);
+			for (int j = 1; j < result[i].size(); j++)
+			{
+				CString neighborName = result[i][j];
+				graph[vertexName].push_back(neighborName);
 			}
-			component_str += _T("\n");
 		}
-		gcomponent.push_back(component_str);
+		std::vector<std::vector<CString>> components;
+		bool is_neighbor = true;
+		for (auto& v : vertexMap) {
+			for (const auto& neighbor : graph[v]) {
+				if (std::find(graph[neighbor].begin(), graph[neighbor].end() , v) == graph[neighbor].end()) {
+					is_neighbor = false;
+					break;
+				}
+			}
+			if (!is_neighbor) {
+				break;
+			}
+
+		}
+		
+		if (is_neighbor) {
+			for (int i = 0; i < numVertices; i++) {
+				for (const auto& elem : vertexMap)
+				{
+					std::vector<CString> component;
+					if (!visited[vertexMap[i]]) {
+						DFS(graph, vertexMap[i], component, visited);
+						components.push_back(component);
+					}
+				}
+			}
+		}
+		else {
+			MessageBox(NULL, _T("Invalid input format"), _T("Message"), MB_OK);
+		}
+
+		
+
+		std::vector<CString> gcomponent;
+		for (int i = 0; i < components.size(); i++) {
+			CString component_str;
+			std::vector<CString> component = components[i];
+			component_str.Format(_T("%d"), component.size());
+			component_str.Append("\n");
+			for (CString node : component) {
+				component_str.Append(node);
+				component_str.Append(" ");
+				for (const auto& elem : graph[node]) {
+					component_str.Append(elem);
+					component_str.Append(" ");
+
+				}
+				component_str.Append("\n");
+			}
+			gcomponent.push_back(component_str);
+		}
+
+		return gcomponent;
 	}
-
-
-	return gcomponent;
 }
 
-
-
-std::vector<int> CGraphAppDoc::splitString(const std::string& str) {
-	try
-	{
-		std::stringstream iss(str);
-
-		int number;
-		std::vector<int> myNumbers;
-		while (iss >> number)
-			myNumbers.push_back(number);
-
-		return myNumbers;
-	}
-	catch (const std::exception& e) {
-		throw std::invalid_argument("Entered a non integer value in string");
-	}
-
-}
-
-void CGraphAppDoc::DFS(std::vector<std::vector<int>>& graph, int v, std::vector<int>& component, std::vector<bool>& visited)
-{
-visited[v] = true;
-component.push_back(v);
-for (const auto& neighbor : graph[v]) {
-	if (!visited[neighbor]) {
-		DFS(graph, neighbor, component, visited);
-	}
-}
-}
 
 void CGraphAppDoc::logInfo(CString message, CString type)
 {

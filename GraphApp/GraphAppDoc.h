@@ -6,6 +6,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <map>
 
 
 
@@ -13,12 +14,8 @@ class CGraphAppDoc : public CDocument
 {
 private:
 	std::vector<CString> graph();
-
 	CString _logText;
-	virtual std::vector<int> splitString(const std::string& str);
-	void DFS(std::vector<std::vector<int>>& graph, int v, std::vector<int>& component, std::vector<bool>& visited);
-
-	void logInfo(CString message, CString type);
+	
 
 protected: 
 	CGraphAppDoc() noexcept;
@@ -33,9 +30,10 @@ public:
 
 // Операции
 public:
-	const CString& GetText();
-	void SetText(CString t);
-
+	virtual CString& GetText();
+	virtual void SetText(CString t);
+	virtual void DFS(std::map<CString, std::vector<CString>>& graph, CString v, std::vector<CString>& component, std::map<CString, bool>& visited);
+	virtual void logInfo(CString message, CString type);
 // Переопределение
 public:
 	virtual BOOL OnNewDocument();
